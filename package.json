@@ -1,0 +1,33 @@
+{
+	"name": "casket",
+	"description": "casket is an easy-to-use web file storage.",
+	"version": "0.1.0",
+	"keywords": [
+		"casket",
+		"file",
+		"storage",
+		"web",
+		"http",
+		"upload",
+		"files",
+		"coffeescript",
+		"javascript"
+	],
+	"author": {
+		"name": "Jannis R",
+		"email": "mail@jannisr.de",
+		"url": "http://jannisr.de"
+	},
+	"homepage": "https://github.com/derhuerst/casket",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/derhuerst/casket.git"
+	},
+	"bugs": "https://github.com/derhuerst/casket/issues",
+	"license": "MIT",
+	"dependencies": {
+		"coffee-script":	"^1.9.3",
+		"config":			"^1.14.0",
+		"express":			"^4.13.1"
+	},
+}
