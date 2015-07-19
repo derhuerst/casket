@@ -1,4 +1,3 @@
-extend =		require 'extend'
 path =			require 'path'
 express =		require 'express'
 list =			require './list'
