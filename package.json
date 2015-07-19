@@ -30,7 +30,13 @@
 		"config":			"^1.14.0",
 		"express":			"^4.13.1"
 	},
+	"main": "server/Casket.coffee",
+	"bin": "./bin/casket",
+	"scripts": {
+		"start": "./bin/casket"
+	},
 	"directories": {
 		"lib": "./server",
+		"bin": "./bin"
 	}
 }

@@ -4,6 +4,7 @@
 			"path": ".",
 			"name": "casket",
 			"folder_exclude_patterns": [
+				"bin",
 				"public",
 				"config",
 				"server",
@@ -12,6 +13,10 @@
 			"file_exclude_patterns": [
 				"*.sublime-workspace"
 			]
+		},
+		{
+			"path": "./bin",
+			"name": "bin"
 		},
 		{
 			"path": "./server",

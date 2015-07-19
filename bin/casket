@@ -1,0 +1,14 @@
+#!/usr/bin/env coffee
+
+
+
+config =		require 'config'
+Casket =		require '../server/Casket'
+
+
+
+instance = Object.create Casket
+path = config.get 'path'
+name = config.get 'name'
+instance.init path, name
+instance.listen config.get 'port'
