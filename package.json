@@ -30,4 +30,7 @@
 		"config":			"^1.14.0",
 		"express":			"^4.13.1"
 	},
+	"directories": {
+		"lib": "./server",
+	}
 }

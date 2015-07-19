@@ -9,3 +9,5 @@ npm-debug.log
 .gitignore
 casket.sublime-project
 casket.sublime-workspace
+
+public/

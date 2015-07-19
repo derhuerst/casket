@@ -4,12 +4,19 @@
 			"path": ".",
 			"name": "casket",
 			"folder_exclude_patterns": [
+				"public",
+				"config",
+				"server",
 				"node_modules"
 			],
 			"file_exclude_patterns": [
 				"*.sublime-workspace"
 			]
 		},
+		{
+			"path": "./server",
+			"name": "server"
+		}
 	],
 	"settings": {
 		"tab_size": 4,
