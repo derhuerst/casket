@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html><head>
-	<title>{{ casket }}/{{ path }}</title>
+	<title>{{ name }}/{{ path }}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<style>
@@ -104,7 +104,7 @@ a {
 <ul id="breadcrumb">
 	<div class="container">
 		{% for entry in breadcrumb %}
-			<li><a href="{{entry.url}}">{{entry.name}}</a></li>
+			<li><a href="{{ entry.path }}">{{ entry.name }}</a></li>
 		{% endfor %}
 	</div>
 </ul>
@@ -112,7 +112,12 @@ a {
 <ul id="files">
 	<div class="container">
 		{% for file in files %}
-			<li><a href="{{file.url}}">{{file.name}}</a></li>
+			<li>
+				<a href="{{ file.path }}">{{ file.name }}</a>
+				<form class="delete" method="DELETE" action="{{ file.path }}">
+					<input type="submit" value="remove">
+				</form>
+			</li>
 		{% endfor %}
 	</div>
 </ul>

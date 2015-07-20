@@ -7,7 +7,7 @@
 				"bin",
 				"public",
 				"config",
-				"server",
+				"src",
 				"node_modules"
 			],
 			"file_exclude_patterns": [
@@ -19,8 +19,8 @@
 			"name": "bin"
 		},
 		{
-			"path": "./server",
-			"name": "server"
+			"path": "./src",
+			"name": "src"
 		}
 	],
 	"settings": {

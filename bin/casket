@@ -3,12 +3,14 @@
 
 
 config =		require 'config'
-Casket =		require '../server/Casket'
+winston =		require 'winston'
+Casket =		require '../src/Casket'
 
 
 
-instance = Object.create Casket
-path = config.get 'path'
-name = config.get 'name'
-instance.init path, name
-instance.listen config.get 'port'
+try
+	instance = Object.create Casket
+	instance.init config.get('dir'), config.get('name'), winston
+	instance.listen config.get('port')
+catch err
+	winston.error err
