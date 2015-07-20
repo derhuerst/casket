@@ -38,10 +38,12 @@
 	"main": "src/Casket.coffee",
 	"bin": "./bin/casket",
 	"scripts": {
-		"start": "./bin/forever start -c coffee ./bin/casket",
-		"stop": "./bin/forever stop ./bin/casket",
-		"restart": "./bin/forever restart ./bin/casket"
 		"casket":	"./bin/casket",
+		"start":	"./bin/forever start -c coffee ./bin/casket",
+		"watch":	"./bin/forever start -w --watchDirectory ./server --watchIgnore ./node_modules/ -c coffee ./bin/casket",
+		"stop":		"./bin/forever stop ./bin/casket",
+		"restart":	"./bin/forever restart ./bin/casket",
+		"logs":		"./bin/forever logs ./bin/casket"
 	},
 	"directories": {
 		"lib": "./server",

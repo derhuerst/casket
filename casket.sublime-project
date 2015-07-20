@@ -21,6 +21,10 @@
 		{
 			"path": "./src",
 			"name": "src"
+		},
+		{
+			"path": "./config",
+			"name": "config"
 		}
 	],
 	"settings": {
