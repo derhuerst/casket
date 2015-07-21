@@ -1,14 +1,22 @@
 # casket
 
-*casket* is an easy-to-use web file storage.
+***casket* is an HTTP server** that supports `GET`, `POST` and `DELETE` requests. It can respond in HTML, JSON and plain text format, the HTML-version being a minimalistic file management UI.
+
+*casket* is written in CoffeeScript and embraces [prototypal programming](http://davidwalsh.name/javascript-objects-deconstruction#simpler-object-object), making it easily extendable. ***casket* is [MIT-licensed](LICENSE).**
 
 
 
-## Install
+## Install (globally)
 
 ```shell
-npm install casket
+npm install -g casket
 ```
+
+
+
+## Usage
+
+coming soon!
 
 
 
