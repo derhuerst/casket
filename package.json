@@ -37,8 +37,8 @@
 	},
 	"main": "src/Casket.coffee",
 	"bin": {
-		"casket": "./bin/casket"
-		"casketd": "./bin/casketd",
+		"casket": "./bin/casket",
+		"casketd": "./bin/casketd"
 	},
 	"scripts": {
 		"casket":	"./bin/casket",

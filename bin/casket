@@ -4,7 +4,6 @@
 
 minimist =		require 'minimist'
 argv = minimist process.argv.slice 2
-console.log argv
 
 
 

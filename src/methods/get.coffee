@@ -22,12 +22,9 @@ module.exports = (casket) ->
 		absolute = path.join casket.dir, requested
 
 		error = (err) ->
-			console.trace()
 			res.error err.code, err.message
 
 		fs.stat absolute, (err, stats) ->
-			console.log absolute
-			console.log err
 			if err and err.code is 'ENOENT' then return error new HttpError 'Not found', 404
 			else if err then return error unknownError
 
