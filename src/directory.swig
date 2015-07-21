@@ -23,10 +23,25 @@ a {
 	color: #555;
 }
 
+button {
+	padding: .2em .2em;
+	font-size: 80%;
+	line-height: 1;
+	color: #e74c3c;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	--webkit-appearance: none;
+}
+button:hover {
+	color: white;
+	background-color: #e74c3c;
+}
+
 
 .container {
 	margin: 0 auto;
-	max-width: 40em;
+	max-width: 35em;
 }
 
 
@@ -72,31 +87,36 @@ a {
 }
 
 #files {
-	margin: .7em 0;
-	list-style: none;
+	width: 100%;
+	margin: .7em 0 1em 0;
+	border-spacing: 0;
 }
 
-#files li {
-	display: block;
-}
-#files li:last-child {
-	border-bottom: 0;
-}
-
-#files li a {
-	display: block;
+#files .file td {
 	padding: .2em 0;
-	margin: .4em 0;
 	border-bottom: 1px solid transparent;
-	background-color: transparent;
 }
-#files li a:hover {
-	color: #333;
+#files .file:hover td {
 	border-bottom-color: #bbb;
 }
-#files li a:active {
+
+#files .file .file-name a {
+	display: block;
+}
+#files .file .file-name a:hover {
+	color: #333;
+}
+#files .file .file-name a:active {
 	color: #000;
-	border-bottom-color: #000;
+}
+
+#files .file .file-actions{
+	width: 3.5em;
+	text-align: right;
+}
+
+#files .file .file-actions form input{
+	vertical-align: middle;
 }
 	</style>
 </head><body>
@@ -109,17 +129,21 @@ a {
 	</div>
 </ul>
 
-<ul id="files">
-	<div class="container">
+<div class="container">
+
+	<table id="files" sortable>
 		{% for file in files %}
-			<li>
-				<a href="{{ file.path }}">{{ file.name }}</a>
-				<form class="delete" method="DELETE" action="{{ file.path }}">
-					<input type="submit" value="remove">
-				</form>
-			</li>
+			<tr class="file">
+				<td class="file-name">
+					<a href="{{ file.path }}">{{ file.name }}</a>
+				</td>
+				<td class="file-actions">
+					<button type="submit" formmethod="DELETE" formaction="{{ file.path }}" alt="delete {{ file.name }}">delete</button>
+				</td>
+			</tr>
 		{% endfor %}
-	</div>
-</ul>
+	</table>
+
+</div>
 
 </body></html>
