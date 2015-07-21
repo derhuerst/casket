@@ -6,7 +6,6 @@
 			"folder_exclude_patterns": [
 				"bin",
 				"public",
-				"config",
 				"src",
 				"node_modules"
 			],
@@ -21,10 +20,6 @@
 		{
 			"path": "./src",
 			"name": "src"
-		},
-		{
-			"path": "./config",
-			"name": "config"
 		}
 	],
 	"settings": {

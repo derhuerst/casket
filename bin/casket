@@ -2,15 +2,50 @@
 
 
 
-config =		require 'config'
-winston =		require 'winston'
+minimist =		require 'minimist'
+argv = minimist process.argv.slice 2
+console.log argv
+
+
+
+help = [
+	'Usage:'
+	'casket [-n <name>] [-d <directory>] [-p <port>]'
+	''
+	'Options:'
+	'  -n, --name  How the casket server will call itself. Default: casket'
+	'  -d, --dir   What casket server will serve. Default: ./public'
+	'  -p, --port  Where the casket server will listen. Default: 8000'
+].join '\n'
+
+if argv.h is true or argv.help is true
+	process.stdout.write help
+	process.exit 0
+
+
+
+options =
+	name:		'casket'
+	dir:		'./public'
+	port:		8000
+
+if argv.n? then options.name = argv.n
+if argv.name? then options.name = argv.name
+
+if argv.d? then options.dir = argv.d
+if argv.dir? then options.dir = argv.dir
+
+if argv.p? then options.port = argv.p
+if argv.port? then options.port = argv.port
+
+
+
 Casket =		require '../src/Casket'
+path =			require 'path'
+winston =		require 'winston'
 
+options.dir = path.resolve process.cwd(), options.dir
 
-
-try
-	instance = Object.create Casket
-	instance.init config.get('dir'), config.get('name'), winston
-	instance.listen config.get('port')
-catch err
-	winston.error err
+casket = Object.create Casket
+casket.init options.dir, options.name, winston
+casket.listen options.port

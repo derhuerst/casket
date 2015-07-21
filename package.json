@@ -27,7 +27,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"coffee-script":	"^1.9.3",
-		"config":			"^1.14.0",
+		"minimist":			"^1.1.1",
 		"winston":			"^1.0.1",
 		"http-error":		"^0.0.5",
 		"accepts":			"^1.2.11",
@@ -36,7 +36,9 @@
 		"forever":			"^0.14.2"
 	},
 	"main": "src/Casket.coffee",
-	"bin": "./bin/casket",
+	"bin": {
+		"casket": "./bin/casket"
+	},
 	"scripts": {
 		"casket":	"./bin/casket",
 		"start":	"./bin/forever start -c coffee ./bin/casket",
