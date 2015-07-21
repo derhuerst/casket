@@ -45,7 +45,8 @@ module.exports = (casket) ->
 								path: '/'
 							]
 							traversal = '/'
-							for part in path.relative('/', requested).split path.sep
+							for part in requested.split path.sep
+								continue if part is ''
 								traversal = path.join traversal, part
 								breadcrumb.push
 									name: part

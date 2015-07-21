@@ -14,13 +14,13 @@ body {
 	font-size: 120%;
 	line-height: 1.4;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	color: #333;
+	color: #34495e;
 	background-color: white;
 }
 
-a {
+a, a:visited {
 	text-decoration: none;
-	color: #555;
+	color: #34495e;
 }
 
 button {
@@ -46,10 +46,11 @@ button:hover {
 
 
 #breadcrumb {
-	margin-left: -1.4em;
-	line-height: 2.6;
+	margin-left: -.8em;
+	line-height: 2.3;
 	list-style: none;
-	background-color: #f0f0f0;
+	color: white;
+	background-color: #34495e;
 	border-bottom: 1px solid #bbb;
 }
 
@@ -60,18 +61,13 @@ button:hover {
 #breadcrumb li a {
 	position: relative;
 	display: inline-block;
-	padding: 0 .7em;
+	padding: 0 .4em;
 	margin-right: 1.4em;
 	background-color: transparent;
-	color: #333;
+	color: #ddd;
 }
-#breadcrumb li a:hover {
-	background-color: #ddd;
-	color: #111;
-}
-#breadcrumb li a:active {
-	background-color: #bbb;
-	color: #000;
+#breadcrumb li a:hover, #breadcrumb li.active a {
+	color: #fff;
 }
 #breadcrumb li a:after {
 	content: " / ";
@@ -81,7 +77,9 @@ button:hover {
 	left: 100%;
 	padding: 0 .7em;
 	display: block;
+	color: #d0d0d0;
 }
+
 #breadcrumb li:last-child a:after {
 	display: none;
 }
@@ -124,7 +122,7 @@ button:hover {
 <ul id="breadcrumb">
 	<div class="container">
 		{% for entry in breadcrumb %}
-			<li><a href="{{ entry.path }}">{{ entry.name }}</a></li>
+			<li{% if loop.last %} class="active"{% endif %}><a href="{{ entry.path }}">{{ entry.name }}</a></li>
 		{% endfor %}
 	</div>
 </ul>
