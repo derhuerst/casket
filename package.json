@@ -33,19 +33,17 @@
 		"accepts":			"^1.2.11",
 		"swig":				"^1.4.2",
 		"send":				"^0.12.0",
-		"forever":			"^0.14.2"
+		"pm2":				"^0.14.3"
 	},
 	"main": "src/Casket.coffee",
 	"bin": {
 		"casket": "./bin/casket"
+		"casketd": "./bin/casketd",
 	},
 	"scripts": {
 		"casket":	"./bin/casket",
-		"start":	"./bin/forever start -c coffee ./bin/casket",
-		"watch":	"./bin/forever start -w --watchDirectory ./server --watchIgnore ./node_modules/ -c coffee ./bin/casket",
-		"stop":		"./bin/forever stop ./bin/casket",
-		"restart":	"./bin/forever restart ./bin/casket",
-		"logs":		"./bin/forever logs ./bin/casket"
+		"start":	"./bin/casketd start demo",
+		"stop":		"./bin/casketd stop demo"
 	},
 	"directories": {
 		"lib": "./server",
