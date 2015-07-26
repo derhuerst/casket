@@ -14,8 +14,8 @@
 					<a href="{{ file.path }}">{{ file.name }}</a>
 				</td>
 				<td class="file-actions">
-					<form method="DELETE" action="{{ file.path }}">
-						<input type="submit" value="delete"/>
+					<form class="file-actions-delete" method="DELETE" action="{{ file.path }}">
+						<input class="file-actions-delete-button" type="submit" value="delete"/>
 					</form>
 				</td>
 			</tr>
