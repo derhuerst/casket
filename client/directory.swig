@@ -23,5 +23,9 @@
 	</table>
 </div>
 
+<script type="application/javascript">
+{% include "./js/delete.js" %}
+</script>
+
 </body>
 </html>
