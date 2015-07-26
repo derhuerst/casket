@@ -52,8 +52,10 @@ module.exports = (casket) ->
 									name: part
 									path: traversal
 
+							nFiles = []
 							for file, i in files
-								files[i] =
+								continue if path.basename(file).substr(0, 1) is '.'
+								nFiles.push
 									name: path.basename file
 									path: path.join requested, file
 
@@ -61,7 +63,7 @@ module.exports = (casket) ->
 								name: casket.name
 								path: requested
 								breadcrumb: breadcrumb
-								files: files
+								files: nFiles
 						when 'json'
 							res.setHeader 'Content-Type', 'application/json'
 							res.end directoryAsJSON files

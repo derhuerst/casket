@@ -70,7 +70,7 @@ module.exports =
 
 		# logging
 		res.on 'finish', () ->
-			thus.logger.info res.statusCode, req.url.pathname
+			thus.logger.info res.statusCode, req.method, req.url.pathname
 
 		# parsed url
 		req.originalUrl = req.url
