@@ -5,6 +5,7 @@
 			"name": "casket",
 			"folder_exclude_patterns": [
 				"bin",
+				"client",
 				"public",
 				"src",
 				"node_modules"
@@ -16,6 +17,10 @@
 		{
 			"path": "./bin",
 			"name": "bin"
+		},
+		{
+			"path": "./client",
+			"name": "client"
 		},
 		{
 			"path": "./src",

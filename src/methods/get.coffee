@@ -86,7 +86,7 @@ module.exports = (casket) ->
 
 
 
-directoryAsHTML = swig.compileFile path.join __dirname, '..', 'directory.swig'   # todo: reuse template parts
+directoryAsHTML = swig.compileFile path.join __dirname, '../../client/directory.swig'
 
 directoryAsJSON = (files) ->
 	results = []
