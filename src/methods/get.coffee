@@ -1,105 +1,108 @@
 path =			require 'path'
-url =			require 'url'
-HttpError =		require('http-error').HttpError
-fs =			require 'fs'
-swig =			require 'swig'
+Q =				require 'q'
+fs =			require 'fs-promise'
+# todo: switch to `q-io`
 send =			require 'send'
+url =			require 'url'
+swig =			require 'swig'
+
+# todo:
+# - move template logic to `src/Context`
+# - use sub-templates for different bodys
+directoryTpl =	swig.compileFile "#{__dirname}/../../client/directory.swig"
 
 
 
 
 
-unknownError = new HttpError 'Unknown error', 500
+
+sendFile = (ctx) ->
+	deferred = Q.defer()
+	stream = send ctx.req, ctx.path,
+		dotfiles:	'deny'
+		index:		false
+	stream.pipe ctx.res
+	stream.on 'end', () ->
+		deferred.resolve true
+	stream.on 'error', () ->
+		deferred.reject ctx.unknownError
+	return deferred.promise
 
 
 
-# todo: rewrite promise-based
+directoryAsHtml = (casket, ctx, files) ->
+	breadcrumb = [
+		name: casket.name
+		path: '/'
+	]
+	traversal = '/'
+	for part in ctx.url.pathname.split path.sep
+		continue if part is ''
+		traversal = path.join traversal, part
+		breadcrumb.push
+			name: part
+			path: traversal
+
+	return directoryTpl
+		name: casket.name
+		path: ctx.url.pathname
+		breadcrumb: breadcrumb
+		files: files
+
+
+
 module.exports = (casket) ->
 	if not casket? then throw new Error 'Missing `casket` parameter'
 
-	return (req, res) ->
-		requested = path.normalize req.url.pathname
-		absolute = path.join casket.dir, requested
+	return (ctx) ->
+		fs.stat(ctx.path)
+		.then (stats) ->
 
-		error = (err) ->
-			res.error err.code, err.message
+			if stats.isFile()
 
-		fs.stat absolute, (err, stats) ->
-			if err and err.code is 'ENOENT' then return error new HttpError 'Not found', 404
-			else if err then return error unknownError
+				return sendFile(ctx)
+				.then () ->
+					return true
+				, (err) ->
+					throw ctx.unknownError
 
-			if stats.isDirectory()
+			else if stats.isDirectory()
 
-				if '/' isnt requested.substr -1
-					res.statusCode = 303
-					req.url.pathname += '/'
-					res.setHeader 'Location', url.format req.url
-					return res.end 'Redirecting'
+				if '/' isnt ctx.url.pathname.substr -1
+					ctx.url.pathname += '/'
+					ctx.status(303).redirect url.format ctx.url
+					switch ctx.accepted
+						when 'html' then ctx.html '<p>Redirecting</p>'   # todo: use templates
+						when 'json' then ctx.json { message: 'Redirecting' }
+						else ctx.text 'Redirecting'
+					return true
 
-				fs.readdir absolute, (error, files) ->
-					if error then return error unknownError
-					switch req.accepted.type 'html', 'json'
-						when 'html'
-							breadcrumb = [
-								name: casket.name
-								path: '/'
-							]
-							traversal = '/'
-							for part in requested.split path.sep
-								continue if part is ''
-								traversal = path.join traversal, part
-								breadcrumb.push
-									name: part
-									path: traversal
-
-							nFiles = []
-							for file, i in files
-								continue if path.basename(file).substr(0, 1) is '.'
-								nFiles.push
-									name: path.basename file
-									path: path.join requested, file
-
-							res.end directoryAsHTML
-								name: casket.name
-								path: requested
-								breadcrumb: breadcrumb
-								files: nFiles
-						when 'json'
-							res.setHeader 'Content-Type', 'application/json'
-							res.end directoryAsJSON files
+				return fs.readdir(ctx.path)
+				.then (files) ->
+					nFiles = []
+					for file, i in files
+						continue if path.basename(file).substr(0, 1) is '.'
+						nFiles.push
+							name: path.basename file
+							path: path.join ctx.url.pathname, file
+					switch ctx.accepted
+						when 'html' then ctx.html directoryAsHtml casket, ctx, nFiles   # todo: use templates
+						when 'json' then ctx.json nFiles
 						else
-							res.setHeader 'Content-Type', 'text/plain'
-							res.end directoryAsText files
+							result = ''
+							for file in nFiles
+								result += file.name + '\n'
+							ctx.text result
+					return true
+				, (err) ->
+					throw ctx.unknownError
 
-
-			else if stats.isFile()
-
-				file = send req, absolute,
-					dotfiles:	'deny'
-					index:		false
-				file.pipe res
-				file.on 'error', (err) ->
-					error unknownError
-
-
-			else return error unknownError
-
-
-
-
-
-directoryAsHTML = swig.compileFile path.join __dirname, '../../client/directory.swig'
-
-directoryAsJSON = (files) ->
-	results = []
-	for file, i in files
-		results.push
-			name: path.basename file
-			path: path.join requested, file
-	return JSON.stringify results
-
-directoryAsJSON = (files) ->
-	result = ''
-	for file, i in files
-		result += path.basename file + '\n'
-	return result
+			else throw ctx.unknownError
+		,  (err) ->
+			if err.code is 'ENOENT'
+				throw new ctx.HttpError 'Not found', 404
+			else throw ctx.unknownError
+		.catch (err) ->
+			ctx.error err
+			return true
+		.done()
