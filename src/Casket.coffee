@@ -3,6 +3,12 @@ http =			require 'http'
 url =			require 'url'
 accepts =		require 'accepts'
 
+onOPTIONS =		require './methods/options'
+onGET =			require './methods/get'
+onPOST =		require './methods/post'
+onDELETE =		require './methods/delete'
+Context =		require './Context'
+
 
 
 
@@ -11,20 +17,23 @@ module.exports =
 
 
 
-	_options:	require './methods/options'
-	_get:		require './methods/get'
-	_post:		require './methods/post'
-	_delete:	require './methods/delete'
+	onOPTIONS:	onOPTIONS
+	onGET:		onGET
+	onPOST:		onPOST
+	onDELETE:	onDELETE
 
-	_methods: {}
-
-
-
-	cors: false
+	Context:	Context
 
 
 
-	init: (dir, name, logger) ->
+	dir:		null
+	name:		null
+	log:		null
+	cors:		false
+
+
+
+	init: (dir, name, log) ->
 		if not dir? then throw new Error 'Missing `dir` parameter'
 		@dir = path.normalize dir
 		@relative = path.join '.', path.relative process.cwd(), @dir
@@ -32,11 +41,13 @@ module.exports =
 		if not name? then throw new Error 'Missing `name` parameter'
 		@name = name
 
-		if not logger? then throw new Error 'Missing `logger` parameter'
-		@logger = logger
+		if not log? then throw new Error 'Missing `log` parameter'
+		@log = log
 
-		for method in ['options', 'get', 'post', 'delete']
-			@_methods[method] = @['_' + method] this
+		@onOPTIONS = @onOPTIONS this
+		@onGET = @onGET this
+		@onPOST = @onPOST this
+		@onDELETE = @onDELETE this
 
 		thus = this
 		@server = http.createServer (req, res) ->
@@ -47,13 +58,13 @@ module.exports =
 
 	listen: (port, callback) ->
 		@server.listen port, () =>
-			@logger.info "Serving #{@relative} as '#{@name}' on port #{port}."
+			@log.info "Serving #{@relative} as '#{@name}' on port #{port}."
 			callback?()
 		return this
 
 	close: (callback) ->
 		@server.close () ->
-			@logger.info "Stopped serving '#{@name}'."
+			@log.info "Stopped serving '#{@name}'."
 			callback?()
 		return this
 
