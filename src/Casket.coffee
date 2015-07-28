@@ -51,7 +51,17 @@ module.exports =
 
 		thus = this
 		@server = http.createServer (req, res) ->
-			thus._onRequest req, res
+			thus.log.info res.statusCode, req.method, req.url
+
+			context = Object.create thus.Context
+			context.init thus.dir, req, res, thus.cors
+
+			handle = thus['on' + req.method.toUpperCase()]
+			if not handle then return context.error new context.HttpError 405, 'Invalid HTTP method'
+
+			handle context
+			# todo: handle errors
+
 		return this
 
 
@@ -67,36 +77,3 @@ module.exports =
 			@log.info "Stopped serving '#{@name}'."
 			callback?()
 		return this
-
-
-
-	_onRequest: (req, res) ->
-		thus = this
-
-		# error handle
-		res.error = (code, message) ->
-			res.statusCode = code
-			res.statusMessage = message
-			res.end message
-
-		# logging
-		res.on 'finish', () ->
-			thus.logger.info res.statusCode, req.method, req.url.pathname
-
-		# parsed url
-		req.originalUrl = req.url
-		req.url = url.parse req.url
-
-		# accepted content type & encoding
-		req.accepted = accepts req
-
-		if @cors
-			res.setHeader 'Access-Control-Allow-Origin', '*'
-			res.setHeader 'Access-Control-Allow-Methods', '*'
-			res.setHeader 'Access-Control-Allow-Headers', '*'
-			res.setHeader 'Access-Control-Expose-Headers', '*'
-
-		# method handles
-		handle = @_methods[req.method.toLowerCase()]
-		if not handle then return res.error 405, 'Invalid HTTP method'
-		handle req, res
