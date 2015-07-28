@@ -41,7 +41,7 @@ if argv.port? then options.port = argv.port
 
 Casket =		require '../src/Casket'
 path =			require 'path'
-winston =		require 'winston'
+winston =		require 'winston'   # todo: consider using `bunyan`
 
 options.dir = path.resolve process.cwd(), options.dir
 

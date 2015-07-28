@@ -80,7 +80,7 @@ module.exports = (casket) ->
 				return fs.readdir(ctx.path)
 				.then (files) ->
 					nFiles = []
-					for file, i in files
+					for file in files
 						continue if path.basename(file).substr(0, 1) is '.'
 						nFiles.push
 							name: path.basename file
