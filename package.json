@@ -32,6 +32,7 @@
 		"q":				"^1.4.1",
 		"fs-promise":		"^0.3.1",
 		"rimraf-promise":	"^1.0.0",
+		"formidable":		"^1.0.17",
 		"http-error":		"^0.0.5",
 		"accepts":			"^1.2.11",
 		"swig":				"^1.4.2",
