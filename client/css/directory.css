@@ -4,22 +4,30 @@
 	border-spacing: 0;
 }
 
+#directory #files input[type="submit"] {
+	color: #e74c3c;
+	background-color: transparent;
+}
+#directory #files input[type="submit"]:hover {
+	color: white;
+	background-color: #e74c3c;
+}
+
 #directory #files .file td {
 	padding: .2em 0;
 	border-bottom: 1px solid transparent;
 }
 #directory #files .file:hover td {
 	border-bottom-color: #bbb;
+	/*border-bottom-color: transparent;*/
+	/*background-color: #f0f0f0;*/
 }
 
 #directory #files .file .file-name a {
 	display: block;
 }
 #directory #files .file .file-name a:hover {
-	color: #333;
-}
-#directory #files .file .file-name a:active {
-	color: #000;
+	color: #4d6b8a;
 }
 
 #directory #files .file .file-actions{

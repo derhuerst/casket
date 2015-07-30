@@ -11,6 +11,7 @@
 }
 
 #menu #breadcrumb li {
+	font-size: 105%;
 	display: inline-block;
 }
 
@@ -22,7 +23,8 @@
 	background-color: transparent;
 	color: #ddd;
 }
-#menu #breadcrumb li a:hover, #breadcrumb li.active a {
+#menu #breadcrumb li a:hover,
+#menu #breadcrumb li.active a {
 	color: #fff;
 }
 #menu #breadcrumb li a:after {

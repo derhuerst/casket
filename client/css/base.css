@@ -16,19 +16,23 @@ a, a:visited {
 	color: #34495e;
 }
 
-input[type="submit"] {
-	padding: .2em .2em;
+input {
+	padding: .2em;
 	font-size: 80%;
 	line-height: 1;
-	color: #e74c3c;
-	background-color: transparent;
 	border: none;
-	cursor: pointer;
+	background-color: #f0f0f0;
 	--webkit-appearance: none;
 }
-input[type="submit"]:hover {
+
+input[type="submit"] {
 	color: white;
-	background-color: #e74c3c;
+	background-color: #34495e;
+	cursor: pointer;
+	border-radius: .2em;
+}
+input[type="submit"]:hover {
+	background-color: #4d6b8a;
 }
 
 .container {
