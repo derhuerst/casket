@@ -27,5 +27,7 @@
 {% include "./js/delete.js" %}
 </script>
 
+{% include "./upload.swig" %}
+
 </body>
 </html>
