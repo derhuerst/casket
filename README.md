@@ -4,6 +4,9 @@
 
 *casket* is written in CoffeeScript and embraces [prototypal programming](http://davidwalsh.name/javascript-objects-deconstruction#simpler-object-object), making it easily extendable. ***casket* is [MIT-licensed](LICENSE).**
 
+[![npm version](https://img.shields.io/npm/v/casket.svg)](https://www.npmjs.com/package/casket)
+[![dependency status](https://img.shields.io/david/derhuerst/casket.svg)](https://david-dm.org/derhuerst/casket)
+
 
 
 ## Install (globally)
