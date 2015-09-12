@@ -105,4 +105,3 @@ module.exports = (casket) ->
 		.catch (err) ->
 			ctx.error err
 			return true
-		.done()
