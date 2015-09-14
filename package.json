@@ -2,6 +2,11 @@
 	"name": "casket",
 	"description": "casket is an easy-to-use web file storage.",
 	"version": "0.1.1",
+	"bin": {
+		"casket":	"./bin/casket",
+		"casketd":	"./bin/casketd"
+	},
+	"preferGlobal": true,
 	"keywords": [
 		"casket",
 		"file",
