@@ -1,61 +1,15 @@
 {
-	"name": "casket",
-	"description": "casket is an easy-to-use web file storage.",
-	"version": "0.1.1",
-	"bin": {
-		"casket":	"./bin/casket",
-		"casketd":	"./bin/casketd"
-	},
+	"name":         "casket",
+	"description":  "Serve static files with GUI.",
+	"version":      "0.1.0",
+	"main":         "index.js",
+	"files":        ["index.js"],
+	"author":       "Jannis R <mail@jannisr.de>",
+	"homepage":     "https://github.com/derhuerst/casket",
+	"repository":   "git://github.com/derhuerst/casket.git",
+	"bugs":         "https://github.com/derhuerst/casket/issues",
+	"license":      "ISC",
 	"preferGlobal": true,
-	"keywords": [
-		"casket",
-		"file",
-		"storage",
-		"web",
-		"http",
-		"upload",
-		"files",
-		"coffeescript",
-		"javascript"
-	],
-	"author": {
-		"name": "Jannis R",
-		"email": "mail@jannisr.de",
-		"url": "http://jannisr.de"
-	},
-	"homepage": "https://github.com/derhuerst/casket",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/derhuerst/casket.git"
-	},
-	"bugs": "https://github.com/derhuerst/casket/issues",
-	"license": "MIT",
-	"dependencies": {
-		"coffee-script":	"^1.9.3",
-		"minimist":			"^1.1.1",
-		"winston":			"^1.0.1",
-		"q":				"^1.4.1",
-		"fs-promise":		"^0.3.1",
-		"rimraf-promise":	"^1.0.0",
-		"formidable":		"^1.0.17",
-		"http-error":		"^0.0.5",
-		"accepts":			"^1.2.11",
-		"swig":				"^1.4.2",
-		"send":				"^0.12.0",
-		"pm2":				"^0.14.3"
-	},
-	"main": "src/Casket.coffee",
-	"bin": {
-		"casket": "./bin/casket",
-		"casketd": "./bin/casketd"
-	},
-	"scripts": {
-		"casket":	"./bin/casket",
-		"start":	"./bin/casketd start demo",
-		"stop":		"./bin/casketd stop demo"
-	},
-	"directories": {
-		"lib": "./server",
-		"bin": "./bin"
-	}
+	"keywords":     ["file", "server", "http", "gui", "rest"],
+	"engines" :     {"node": ">=4"}
 }
