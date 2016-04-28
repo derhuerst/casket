@@ -11,5 +11,11 @@
 	"license":      "ISC",
 	"preferGlobal": true,
 	"keywords":     ["file", "server", "http", "gui", "rest"],
-	"engines" :     {"node": ">=4"}
+	"engines" :     {"node": ">=4"},
+	"dependencies": {
+		"koa":         "^2"
+	},
+	"scripts": {
+		"server":      "./cli.js"
+	}
 }
