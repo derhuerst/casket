@@ -1,29 +1,14 @@
-// This is an AJAX workaround because browsers don't support sending DELETE requests using forms.
+// This is a workaround because browsers don't support sending DELETE requests using forms.
 // See https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671 and http://amundsen.com/examples/put-delete-forms/
-
-var deleteOnSubmit = function (file, form, button) {
-	form.addEventListener('submit', function (event) {
-		var caption = button.getAttribute('value')
-		var request = new XMLHttpRequest()
-		request.open(form.getAttribute('method'), form.getAttribute('action'))
-		request.addEventListener('readystatechange', function () {
-			if (request.readyState === 4) {
-				file.parentNode.removeChild(file)
-				button.setAttribute('value', caption)
-				button.removeAttribute('disabled')
-			}
-			// todo: ajax failed
-		})
-		request.send()
-		button.setAttribute('value', '…')
-		button.setAttribute('disabled', 'disabled')
-		event.preventDefault()
-	})
-}
 
 Array.from(document.querySelectorAll('#directory #files .file'))
 .forEach(function (file) {
-	var from = file.querySelector('.file-actions-delete')
+	var form = file.querySelector('.file-actions-delete')
 	var button = file.querySelector('.file-actions-delete-button')
-	deleteOnSubmit(file, from, button)
+	form.addEventListener('submit', function (e) {
+		e.preventDefault()
+		fetch(form.getAttribute('action'), {method: form.getAttribute('method')})
+		.catch(function () {button.setAttribute('value', '❌')})
+		.then(function () {file.parentNode.removeChild(file)})
+	})
 })
