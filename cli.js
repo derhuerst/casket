@@ -5,5 +5,5 @@ const Koa    = require('koa')
 const casket = require('./lib')
 
 new Koa()
-.use(casket(process.argv[2] || __dirname))
+.use(casket(process.argv[2] || process.cwd(), 'casket'))
 .listen(8000)
