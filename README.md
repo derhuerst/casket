@@ -2,6 +2,8 @@
 
 ***casket* is an HTTP server** that supports `GET`, `POST` and `DELETE` requests. It can respond in HTML, JSON and plain text format, **the HTML-version being a file management UI**.
 
+![casket serving a directory](demo.png)
+
 [![npm version](https://img.shields.io/npm/v/casket.svg)](https://www.npmjs.com/package/casket)
 [![build status](https://img.shields.io/travis/derhuerst/casket.svg)](https://travis-ci.org/derhuerst/casket)
 [![dependency status](https://img.shields.io/david/derhuerst/casket.svg)](https://david-dm.org/derhuerst/casket)
