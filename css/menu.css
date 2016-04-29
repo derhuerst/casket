@@ -19,4 +19,5 @@
 	top: 0; left: 100%; padding: 0 .7em;
 	color: #d0d0d0 }
 
+#menu #breadcrumb li:first-child a { padding-left: 0 }
 #menu #breadcrumb li:last-child a:after { display: none }

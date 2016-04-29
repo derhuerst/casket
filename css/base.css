@@ -7,15 +7,17 @@ body {
 
 a, a:visited { text-decoration: none; color: #34495e }
 
-input {
+input, span.button {
 	padding: .2em;
 	font-size: 80%; line-height: 1;
 	border: none; background-color: #f0f0f0;
 	--webkit-appearance: none }
 
-input[type="submit"] {
+input[type="submit"],
+span.button {
 	color: white; background-color: #34495e;
-	cursor: pointer; border-radius: .2em }
-input[type="submit"]:hover { background-color: #4d6b8a }
+	cursor: pointer }
+input[type="submit"]:hover,
+span.button:hover { background-color: #44596e }
 
-.container { margin: 0 auto; max-width: 35em }
+.container { margin: 0 auto; padding: 0 1em; max-width: 35em }
