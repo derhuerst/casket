@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 'use strict'
 
-const Koa    = require('koa')
+const argv   = require('yargs').argv
 const casket = require('./lib')
 
-new Koa()
-.use(casket(process.argv[2] || process.cwd(), 'casket'))
-.listen(8000)
+casket({
+	  name: argv.name || argv.n || 'casket'
+	, root: argv.dir  || argv.d || process.cwd()
+})
+.listen(argv.port || argv.p || 8000)
