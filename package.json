@@ -13,7 +13,18 @@
 	"keywords":     ["file", "server", "http", "gui", "rest"],
 	"engines" :     {"node": ">=4"},
 	"dependencies": {
-		"koa":         "^2"
+		"yargs":        "^4.6",
+		"path-depth":   "^0.2",
+		"express":      "^4.13.4",
+		"compression":  "^1.6.1",
+		"multer":       "^1.1",
+		"rimraf":       "^2.5.2",
+		"fs-promise":   "^0.5",
+		"co-express":   "^1.2.1",
+		"accepts":      "^1.3.2",
+		"pithy":        "^0.0.4",
+		"whatwg-fetch": "^1",
+		"serve-static": "^1.10.2"
 	},
 	"scripts": {
 		"server":      "./cli.js"
