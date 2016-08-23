@@ -16,6 +16,11 @@
 
 #directory #files .file .file-name a { display: block }
 
+#directory #files .file .file-name .file-suffix {
+	margin-left: .2em;
+	color: #999;
+}
+
 #directory #files .file .file-actions {
 	width: 3.5em; text-align: right }
 #directory #files .file .file-actions form input {
