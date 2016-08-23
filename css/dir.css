@@ -9,10 +9,12 @@
 #directory #files input[type="submit"]:hover {
 	color: white; background-color: #e74c3c }
 
+#directory #files .file:hover { background-color: #eee }
+
 #directory #files .file .file-name {
-	padding-left: .5em;
-	background-color: transparent }
-#directory #files .file:hover .file-name { background-color: #eee }
+	padding: 0 .5em;
+	word-wrap: break-word;
+	overflow-wrap: break-word }
 
 #directory #files .file .file-name a { display: block }
 
@@ -20,6 +22,12 @@
 	margin-left: .2em;
 	color: #999;
 }
+
+#directory #files .file .file-size {
+	padding: 0 .5em;
+	font-size: 85%;
+	color: #999;
+	white-space: nowrap }
 
 #directory #files .file .file-actions {
 	width: 3.5em; text-align: right }
