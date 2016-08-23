@@ -4,8 +4,7 @@
 
 #menu #breadcrumb { line-height: 2.3; list-style: none }
 
-#menu #breadcrumb li {
-	font-size: 105%; display: inline-block }
+#menu #breadcrumb li { display: inline-block }
 
 #menu #breadcrumb li a {
 	position: relative; display: inline-block;

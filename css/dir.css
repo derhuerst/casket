@@ -24,9 +24,11 @@
 }
 
 #directory #files .file .file-size {
-	padding: 0 .5em;
-	font-size: 85%;
+	padding: .2em .5em 0 .5em;
+	font-size: 90%;
+	text-align: right;
 	color: #999;
+	font-family: monospace;
 	white-space: nowrap }
 
 #directory #files .file .file-actions {
