@@ -13,7 +13,7 @@
 	"keywords":     ["file", "server", "http", "gui", "rest"],
 	"engines" :     {"node": ">=4"},
 	"dependencies": {
-		"yargs":        "^4.6",
+		"minimist": "^1.2",
 		"path-depth":   "^0.2",
 		"express":      "^4.13.4",
 		"compression":  "^1.6.1",

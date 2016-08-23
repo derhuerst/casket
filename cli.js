@@ -1,18 +1,25 @@
 #!/usr/bin/env node
 'use strict'
 
-const argv   = require('yargs').argv
+const minimist = require('minimist')
 const casket = require('./lib')
 
-if (argv.help || argv.h) {
-	process.stdout.write(`
-casket [--name my-little-server] [--dir ~/path/to/dir]
+const help = `
+Usage:
+	casket [--name my-little-server] [--dir ~/path/to/dir]
 
 Options:
     --name -n The name of the server, as shown in the GUI.
     --dir  -d The directory to serve, default is the current directory.
 
-`)
+`
+
+
+
+const argv = minimist(process.argv.slice(2))
+
+if (argv.help || argv.h) {
+	process.stdout.write(help)
 	process.exit(0)
 }
 
