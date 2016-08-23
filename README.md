@@ -24,8 +24,9 @@ Usage:
 	casket [--name my-little-server] [--dir ~/path/to/dir]
 
 Options:
-    --name -n The name of the server, as shown in the GUI.
-    --dir  -d The directory to serve, default is the current directory.
+    --name     -n  The name of the server, as shown in the GUI.
+    --dir      -d  The directory to serve, default is the current directory.
+    --readonly -r  Do not allow deletion of files & uploads.
 ```
 
 
