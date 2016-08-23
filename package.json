@@ -1,17 +1,18 @@
 {
 	"name":         "casket",
-	"description":  "Serve static files with GUI.",
+	"description":  "Serve static files and a GUI.",
 	"version":      "0.1.0",
-	"main":         "index.js",
-	"files":        ["index.js"],
+	"main":         "lib/index.js",
+	"bin":          {"casket": "./cli.js"},
+	"files":        ["cli.js", "lib/*", "js/*", "css/*"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/casket",
-	"repository":   "git://github.com/derhuerst/casket.git",
+	"repository":   "github.com/derhuerst/casket",
 	"bugs":         "https://github.com/derhuerst/casket/issues",
 	"license":      "ISC",
 	"preferGlobal": true,
 	"keywords":     ["file", "server", "http", "gui", "rest"],
-	"engines" :     {"node": ">=4"},
+	"engines" :     {"node": ">=6"},
 	"dependencies": {
 		"minimist": "^1.2",
 		"path-depth":   "^0.2",
@@ -25,8 +26,5 @@
 		"pithy":        "^0.0.4",
 		"whatwg-fetch": "^1",
 		"serve-static": "^1.10.2"
-	},
-	"scripts": {
-		"server":      "./cli.js"
 	}
 }
