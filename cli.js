@@ -2,6 +2,7 @@
 'use strict'
 
 const minimist = require('minimist')
+const bonjour = require('bonjour')()
 const casket = require('./lib')
 
 const help = `
@@ -24,9 +25,17 @@ if (argv.help || argv.h) {
 	process.exit(0)
 }
 
-casket({
-	  name: argv.name || argv.n || 'casket'
+const name = argv.name || argv.n || 'casket'
+const port = +(argv.port || argv.p || 8000)
+
+
+
+const app = casket({
+	  name
 	, root: argv.dir  || argv.d || process.cwd()
 	, readonly: argv.readonly || argv.r || false
 })
-.listen(argv.port || argv.p || 8000)
+app.listen(port)
+
+const service = bonjour.publish({name, type: 'http', port})
+process.on('beforeExit', () => bonjour.unpublishAll())

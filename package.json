@@ -15,6 +15,7 @@
 	"engines" :     {"node": ">=6"},
 	"dependencies": {
 		"minimist": "^1.2",
+		"bonjour": "^3.5",
 		"path-depth":   "^0.2",
 		"express":      "^4.13.4",
 		"compression":  "^1.6.1",
