@@ -7,7 +7,7 @@
 	"files":        ["cli.js", "lib/*", "js/*", "css/*"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/casket",
-	"repository":   "github.com/derhuerst/casket",
+	"repository":   "derhuerst/casket",
 	"bugs":         "https://github.com/derhuerst/casket/issues",
 	"license":      "ISC",
 	"preferGlobal": true,
