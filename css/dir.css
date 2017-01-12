@@ -1,22 +1,30 @@
 #directory #files {
 	width: 100%; margin: .7em 0 1em 0;
-	border-spacing: 0 }
+	border-spacing: 0;
+}
 
 #directory #files input[type="submit"] {
 	line-height: 1.5;
 	color: #e74c3c; background-color: transparent;
-	border-radius: 0 }
+	border-radius: 0;
+}
 #directory #files input[type="submit"]:hover {
-	color: white; background-color: #e74c3c }
+	color: white; background-color: #e74c3c;
+}
 
-#directory #files .file:hover { background-color: #eee }
+#directory #files .file:hover {
+	background-color: #eee;
+}
 
 #directory #files .file .file-name {
 	padding: 0 .5em;
 	word-wrap: break-word;
-	overflow-wrap: break-word }
+	overflow-wrap: break-word;
+}
 
-#directory #files .file .file-name a { display: block }
+#directory #files .file .file-name a {
+	display: block;
+}
 
 #directory #files .file .file-name .file-suffix {
 	margin-left: .2em;
@@ -29,9 +37,12 @@
 	text-align: right;
 	color: #999;
 	font-family: monospace;
-	white-space: nowrap }
+	white-space: nowrap;
+}
 
 #directory #files .file .file-actions {
-	width: 3.5em; text-align: right }
+	width: 3.5em; text-align: right;
+}
 #directory #files .file .file-actions form input {
-	vertical-align: middle }
+	vertical-align: middle;
+}

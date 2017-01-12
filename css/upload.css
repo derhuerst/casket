@@ -1,16 +1,30 @@
-#upload{ display: block; margin-top: .7em; margin-bottom: 1em }
+#upload{
+	display: block;
+	margin-top: .7em; margin-bottom: 1em;
+}
 
 #upload #upload-files{
-	display: block; position: relative; margin-bottom: .1em;
-	overflow: hidden; text-align: center }
+	display: block; position: relative;
+	margin-bottom: .1em;
+	overflow: hidden;
+	text-align: center;
+}
 
 #upload #upload-files span {
 	display: block; padding: .5em 1em;
-	background-color: #bbb }
-#upload #upload-files span:hover { background-color: #ccc }
+	background-color: #bbb;
+}
+#upload #upload-files span:hover {
+	background-color: #ccc;
+}
 
-#upload #upload-files input{ position: absolute; opacity: 0 }
+#upload #upload-files input{
+	position: absolute;
+	opacity: 0;
+}
 
 #upload #upload-submit{
-	display: block; padding: .4em 1em; width: 100%;
-	font-size: 83%; border-radius: 0 }
+	display: block;
+	padding: .4em 1em; width: 100%;
+	font-size: 83%; border-radius: 0;
+}

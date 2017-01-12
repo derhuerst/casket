@@ -1,22 +1,35 @@
 #menu {
 	color: white; background-color: #34495e;
-	border-bottom: 1px solid #bbb }
+	border-bottom: 1px solid #bbb;
+}
 
-#menu #breadcrumb { line-height: 2.3; list-style: none }
+#menu #breadcrumb {
+	line-height: 2.3; list-style: none;
+}
 
-#menu #breadcrumb li { display: inline-block }
+#menu #breadcrumb li {
+	display: inline-block;
+}
 
 #menu #breadcrumb li a {
 	position: relative; display: inline-block;
 	padding: 0 .4em; margin-right: 1.4em;
-	color: #ddd; background-color: transparent }
+	color: #ddd; background-color: transparent;
+}
 #menu #breadcrumb li a:hover,
-#menu #breadcrumb li.active a { color: #fff }
+#menu #breadcrumb li.active a {
+	color: #fff;
+}
 #menu #breadcrumb li a:after {
 	content: ' / ';
 	display: block; position: absolute;
 	top: 0; left: 100%; padding: 0 .7em;
-	color: #d0d0d0 }
+	color: #d0d0d0;
+}
 
-#menu #breadcrumb li:first-child a { padding-left: 0 }
-#menu #breadcrumb li:last-child a:after { display: none }
+#menu #breadcrumb li:first-child a {
+	padding-left: 0;
+}
+#menu #breadcrumb li:last-child a:after {
+	display: none;
+}
