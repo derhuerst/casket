@@ -28,6 +28,8 @@
 		"pithy":        "^0.0.4",
 		"filesize": "^3.3",
 		"whatwg-fetch": "^1",
-		"serve-static": "^1.10.2"
+		"serve-static": "^1.10.2",
+		"node-spotlight": "^0.1.0",
+		"stream-sink": "^2.0.0"
 	}
 }
