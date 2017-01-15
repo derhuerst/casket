@@ -19,6 +19,17 @@ input, span.button {
 	--webkit-appearance: none;
 }
 
+input[type="text"] {
+	background-color: #f0f0f0;
+	border: .1em solid #f0f0f0;
+	padding: .25em .3em;
+	font-size: 92%;
+}
+input[type="text"]:focus {
+	outline: none;
+	border-color: #aaa;
+}
+
 input[type="submit"],
 span.button {
 	color: white; background-color: #34495e;
