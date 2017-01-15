@@ -1,7 +1,7 @@
 {
 	"name":         "casket",
 	"description":  "Serve static files and a GUI.",
-	"version":      "1.0.1",
+	"version":      "1.1.0",
 	"main":         "lib/index.js",
 	"bin":          {"casket": "./cli.js"},
 	"files":        ["cli.js", "lib/*", "js/*", "css/*"],

@@ -1,6 +1,6 @@
 # *casket*
 
-***casket* is an HTTP server** that supports `GET`, `POST` and `DELETE` requests. It can respond in HTML, JSON and plain text format, **the HTML-version being a file management UI**.
+***casket* is an HTTP server** that supports `GET`, `POST` and `DELETE` requests. It can respond in HTML, JSON and plain text format, **the HTML-version being a file management UI**. It also supports file search [using Spotlight](https://github.com/derhuerst/node-spotlight).
 
 ![casket serving a directory](demo.png)
 
