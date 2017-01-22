@@ -8,6 +8,7 @@
 [![dependency status](https://img.shields.io/david/derhuerst/casket.svg)](https://david-dm.org/derhuerst/casket)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/casket.svg)](https://david-dm.org/derhuerst/casket#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/casket.svg)
+[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 
 
 ## Installing

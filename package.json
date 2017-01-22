@@ -1,7 +1,7 @@
 {
 	"name":         "casket",
 	"description":  "Serve static files and a GUI.",
-	"version":      "1.1.0",
+	"version":      "1.2.0",
 	"main":         "lib/index.js",
 	"bin":          {"casket": "./cli.js"},
 	"files":        ["cli.js", "lib/*", "js/*", "css/*"],
@@ -30,6 +30,7 @@
 		"whatwg-fetch": "^1",
 		"serve-static": "^1.10.2",
 		"node-spotlight": "^0.1.0",
-		"stream-sink": "^2.0.0"
+		"stream-sink": "^2.0.0",
+		"natsort": "^1.0.6"
 	}
 }
