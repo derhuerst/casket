@@ -26,7 +26,7 @@ if (argv.help || argv.h) {
 }
 
 const name = argv.name || argv.n || 'casket'
-const port = +(argv.port || argv.p || 8000)
+const port = +(argv.port || argv.p || process.env.PORT || 8000)
 
 
 
