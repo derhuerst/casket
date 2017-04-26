@@ -28,6 +28,7 @@ Options:
     --name     -n  The name of the server, as shown in the GUI.
     --dir      -d  The directory to serve, default is the current directory.
     --readonly -r  Do not allow deletion of files & uploads.
+    --port     -p  Default is 8000.
 ```
 
 
