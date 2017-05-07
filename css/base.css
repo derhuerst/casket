@@ -6,15 +6,17 @@ body {
 	font-size: 110%; line-height: 1.4;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 	color: #34495e; background-color: white;
+	margin-bottom: 1em;
 }
 
 a, a:visited {
 	text-decoration: none; color: #34495e;
 }
 
-input, span.button {
+input {
 	padding: .2em;
-	font-size: 80%; line-height: 1;
+	font-size: 80%;
+	line-height: 1;
 	border: none; background-color: #f0f0f0;
 	--webkit-appearance: none;
 }
@@ -31,12 +33,21 @@ input[type="text"]:focus {
 }
 
 input[type="submit"],
-span.button {
+span.button,
+a.button {
+	padding: .2em .3em;
+	line-height: 1;
 	color: white; background-color: #34495e;
 	cursor: pointer;
 }
+span.button,
+a.button {
+	display: inline-block;
+	text-align: center;
+}
 input[type="submit"]:hover,
-span.button:hover {
+span.button:hover,
+a.button:hover {
 	background-color: #44596e;
 }
 
