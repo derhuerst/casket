@@ -21,6 +21,7 @@
 		"express-favicon": "^2",
 		"compression":  "^1.6.1",
 		"multer":       "^1.1",
+		"m3u": "^0.0.2",
 		"rimraf":       "^2.5.2",
 		"fs-promise": "^2.0.0",
 		"co-express": "^2.0.0",
