@@ -32,6 +32,9 @@
 		"serve-static": "^1.10.2",
 		"node-spotlight": "^0.1.0",
 		"stream-sink": "^2.0.0",
-		"natsort": "^1.0.6"
+		"natsort": "^1.0.6",
+		"random-access-file": "^1.7.2",
+		"id3-parser": "^1.2.0",
+		"mp3-duration": "^1.0.10"
 	}
 }
