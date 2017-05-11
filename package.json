@@ -1,10 +1,10 @@
 {
 	"name":         "casket",
 	"description":  "Serve static files and a GUI.",
-	"version":      "1.4.0",
+	"version":      "1.4.1",
 	"main":         "lib/index.js",
 	"bin":          {"casket": "./cli.js"},
-	"files":        ["cli.js", "lib/*", "js/*", "css/*"],
+	"files":        ["cli.js", "lib/*", "js/*", "css/*", "favicon.png", "icon.png"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/casket",
 	"repository":   "derhuerst/casket",
