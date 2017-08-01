@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const minimist = require('minimist')
+const mri = require('mri')
 const bonjour = require('bonjour')()
 const casket = require('./lib')
 
@@ -19,7 +19,9 @@ Options:
 
 
 
-const argv = minimist(process.argv.slice(2))
+const argv = mri(process.argv.slice(2), {
+	boolean: ['help', 'h', 'readonly', 'r']
+})
 
 if (argv.help || argv.h) {
 	process.stdout.write(help)
