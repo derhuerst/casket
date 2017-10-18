@@ -13,6 +13,7 @@ Options:
     --name     -n  The name of the server, as shown in the GUI.
     --dir      -d  The directory to serve, default is the current directory.
     --readonly -r  Do not allow deletion of files & uploads.
+    --nodelete -w  Do not allow deletion of files.
     --port     -p  Default is 8000.
 
 `
@@ -37,6 +38,7 @@ const app = casket({
 	  name
 	, root: argv.dir  || argv.d || process.cwd()
 	, readonly: argv.readonly || argv.r || false
+	, nodelete: arv.nodelete || argv.w || false
 })
 app.listen(port)
 
