@@ -22,7 +22,7 @@ Options:
 
 
 const argv = mri(process.argv.slice(2), {
-	boolean: ['help', 'h', 'readonly', 'r']
+	boolean: ['help', 'h', 'readonly', 'r', 'no-delete', 'w', 'no-upload', 'u']
 })
 
 if (argv.help || argv.h) {
