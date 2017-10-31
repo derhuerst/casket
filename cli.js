@@ -10,11 +10,12 @@ Usage:
 	casket [--name my-little-server] [--dir ~/path/to/dir]
 
 Options:
-    --name     -n  The name of the server, as shown in the GUI.
-    --dir      -d  The directory to serve, default is the current directory.
-    --readonly -r  Do not allow deletion of files & uploads.
-    --nodelete -w  Do not allow deletion of files.
-    --port     -p  Default is 8000.
+    --name      -n  The name of the server, as shown in the GUI.
+    --dir       -d  The directory to serve, default is the current directory.
+    --readonly  -r  Do not allow deletion of files & uploads.
+    --no-delete -w  Do not allow deletion of files.
+    --no-upload -u  Do not allow file upload.
+    --port      -p  Default is 8000.
 
 `
 
@@ -38,7 +39,8 @@ const app = casket({
 	  name
 	, root: argv.dir  || argv.d || process.cwd()
 	, readonly: argv.readonly || argv.r || false
-	, nodelete: arv.nodelete || argv.w || false
+	, 'no-delete': argv['no-delete'] || argv.w || false
+	, 'no-upload': argv['no-upload'] || argv.u || false
 })
 app.listen(port)
 
