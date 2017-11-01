@@ -39,8 +39,8 @@ const app = casket({
 	  name
 	, root: argv.dir  || argv.d || process.cwd()
 	, readonly: argv.readonly || argv.r || false
-	, noDelete: argv['no-delete'] || argv.w || false
-	, noUpload: argv['no-upload'] || argv.u || false
+	, noDelete: argv['delete'] === false || argv.w || false
+	, noUpload: argv['upload'] === false || argv.u || false
 })
 app.listen(port)
 
