@@ -13,7 +13,7 @@ a, a:visited {
 	text-decoration: none; color: #34495e;
 }
 
-input {
+input, button {
 	padding: .2em;
 	font-size: 80%;
 	line-height: 1;
@@ -34,7 +34,8 @@ input[type="text"]:focus {
 
 input[type="submit"],
 span.button,
-a.button {
+a.button,
+button {
 	padding: .2em .3em;
 	line-height: 1;
 	color: white; background-color: #34495e;
@@ -47,7 +48,8 @@ a.button {
 }
 input[type="submit"]:hover,
 span.button:hover,
-a.button:hover {
+a.button:hover,
+button:hover {
 	background-color: #44596e;
 }
 

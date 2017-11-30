@@ -3,13 +3,10 @@
 	border-spacing: 0;
 }
 
-#directory #files input[type="submit"] {
+#directory #files input[type="submit"],
+#directory #files button {
 	line-height: 1.5;
-	color: #e74c3c; background-color: transparent;
 	border-radius: 0;
-}
-#directory #files input[type="submit"]:hover {
-	color: white; background-color: #e74c3c;
 }
 
 #directory #files .file:hover {
@@ -43,6 +40,25 @@
 #directory #files .file .file-actions {
 	width: 3.5em; text-align: right;
 }
-#directory #files .file .file-actions form input {
+#directory #files .file .file-actions-delete-button,
+#directory #files .file .file-actions-airplay-button {
 	vertical-align: middle;
+}
+
+#directory #files .file .file-actions-delete-button {
+	color: #e74c3c;
+	background-color: transparent;
+}
+#directory #files .file .file-actions-delete-button:hover {
+	color: white;
+	background-color: #e74c3c;
+}
+
+#directory #files .file .file-actions-airplay-button {
+	color: #34495e;
+	background-color: white;
+}
+#directory #files .file .file-actions-airplay-button:hover {
+	color: white;
+	background-color: #34495e;
 }
