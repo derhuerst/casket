@@ -2,7 +2,7 @@
 
 ***casket* is an HTTP server** that supports `GET`, `POST` and `DELETE` requests. It can respond in HTML, JSON and plain text format, **the HTML-version being a file management UI**.
 
-It also supports file search [using Spotlight](https://github.com/derhuerst/node-spotlight). For the specific needs of mine, it serves ad-hoc [M3U playlists](https://en.wikipedia.org/wiki/M3U) for any directory.
+It also supports file search [using Spotlight](https://github.com/derhuerst/node-spotlight), and it can stream any audio file to an AirPlay receiver.
 
 ![casket serving a directory](demo.png)
 

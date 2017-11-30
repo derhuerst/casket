@@ -32,10 +32,12 @@
 	},
 	"dependencies": {
 		"accepts": "^1.3.2",
+		"airplay-protocol": "^2.0.2",
 		"audio-conversion-queue": "github:derhuerst/audio-conversion-queue",
 		"bonjour": "^3.5",
 		"co-express": "^2.0.0",
 		"compression": "^1.7.0",
+		"concat-stream": "^1.6.0",
 		"express": "^4.15.3",
 		"express-favicon": "^2",
 		"filesize": "^3.5.10",
