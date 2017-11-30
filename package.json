@@ -1,7 +1,7 @@
 {
 	"name": "casket",
 	"description": "Serve static files and a GUI.",
-	"version": "1.5.0",
+	"version": "1.6.0",
 	"main": "lib/index.js",
 	"bin": {
 		"casket": "./cli.js"
@@ -34,7 +34,7 @@
 		"accepts": "^1.3.2",
 		"airplay-protocol": "^2.0.2",
 		"audio-conversion-queue": "github:derhuerst/audio-conversion-queue",
-		"bonjour": "^3.5",
+		"bonjour": "^3.5.0",
 		"co-express": "^2.0.0",
 		"compression": "^1.7.0",
 		"concat-stream": "^1.6.0",
@@ -46,7 +46,7 @@
 		"mz": "^2.6.0",
 		"natsort": "^1.0.6",
 		"node-spotlight": "^0.1.0",
-		"path-depth": "^0.2",
+		"path-depth": "^0.2.0",
 		"pithy": "^0.0.4",
 		"random-access-file": "^1.8.1",
 		"rimraf": "^2.5.2",

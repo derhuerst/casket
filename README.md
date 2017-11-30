@@ -24,15 +24,16 @@ npm install -g casket
 
 ```
 Usage:
-	casket [--name my-little-server] [--dir ~/path/to/dir]
+	casket [--name my-little-server] [--dir ~/path/to/dir] [--airplay my-apple-tv.local]
 
 Options:
     --name      -n  The name of the server, as shown in the GUI.
     --dir       -d  The directory to serve, default is the current directory.
     --readonly  -r  Do not allow deletion of files & uploads.
-    --no-delete -w  Do not allow delete of files (superceded by --readonly).
-    --no-upload -u  Do not allow upload of files (superceded by --readonly).
+    --no-delete -w  Do not allow deletion of files.
+    --no-upload -u  Do not allow file upload.
     --port      -p  Default is 8000.
+    --airplay   -a  Use this address as AirPlay target.
 ```
 
 
