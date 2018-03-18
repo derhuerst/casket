@@ -45,7 +45,7 @@
 		"multer": "^1.1",
 		"mz": "^2.6.0",
 		"natsort": "^1.0.6",
-		"node-spotlight": "^0.1.0",
+		"node-spotlight": "^0.1.3",
 		"path-depth": "^0.2.0",
 		"pithy": "^0.0.4",
 		"random-access-file": "^1.8.1",
