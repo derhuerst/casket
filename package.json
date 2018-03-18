@@ -35,7 +35,6 @@
 		"airplay-protocol": "^2.0.2",
 		"audio-conversion-queue": "github:derhuerst/audio-conversion-queue",
 		"bonjour": "^3.5.0",
-		"co-express": "^2.0.0",
 		"compression": "^1.7.0",
 		"concat-stream": "^1.6.0",
 		"express": "^4.15.3",
