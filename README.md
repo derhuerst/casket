@@ -11,6 +11,7 @@ It also supports file search [using Spotlight](https://github.com/derhuerst/node
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/casket.svg)](https://david-dm.org/derhuerst/casket#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/casket.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
 
 ## Installing
