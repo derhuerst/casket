@@ -28,7 +28,7 @@
 		"rest"
 	],
 	"engines": {
-		"node": ">=6"
+		"node": ">=7.6"
 	},
 	"dependencies": {
 		"accepts": "^1.3.2",
