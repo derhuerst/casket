@@ -1,7 +1,7 @@
 {
 	"name": "casket",
 	"description": "Serve static files and a GUI.",
-	"version": "1.6.4",
+	"version": "1.6.5",
 	"main": "lib/index.js",
 	"bin": {
 		"casket": "./cli.js"
@@ -51,9 +51,7 @@
 		"rimraf": "^2.5.2",
 		"send": "^0.16.1",
 		"serve-static": "^1.12.3",
-		"stream-sink": "^2.1.0"
-	},
-	"devDependencies": {
+		"stream-sink": "^2.1.0",
 		"whatwg-fetch": "^3.0.0"
 	}
 }
