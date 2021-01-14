@@ -1,16 +1,16 @@
 {
 	"name": "casket",
 	"description": "Serve static files and a GUI.",
-	"version": "1.7.0",
+	"version": "2.0.0",
 	"main": "lib/index.js",
 	"bin": {
 		"casket": "./cli.js"
 	},
 	"files": [
 		"cli.js",
-		"lib/*",
-		"js/*",
-		"css/*",
+		"lib",
+		"js",
+		"css",
 		"favicon.png",
 		"icon.png"
 	],

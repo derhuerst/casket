@@ -16,7 +16,7 @@ Options:
     --no-delete -w  Do not allow deletion of files.
     --no-upload -u  Do not allow file upload.
     --port      -p  Default is 8000.
-    --airplay   -a  Use this address as AirPlay target.
+    --airplay   -a  An AirPlay receiver to stream audio to.
 `
 
 
