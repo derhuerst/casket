@@ -1,7 +1,7 @@
 {
 	"name": "casket",
 	"description": "Serve static files and a GUI.",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"main": "lib/index.js",
 	"bin": {
 		"casket": "./cli.js"
@@ -39,7 +39,7 @@
 		"concat-stream": "^2.0.0",
 		"express": "^4.15.3",
 		"express-favicon": "^2",
-		"filesize": "^6.1.0",
+		"filesize": "^7.0.0",
 		"mri": "^1.1.0",
 		"multer": "^1.1",
 		"mz": "^2.6.0",
